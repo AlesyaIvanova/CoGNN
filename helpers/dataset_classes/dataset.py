@@ -208,7 +208,8 @@ class DataSet(Enum):
             raise ValueError(f'DataSet {self.name} not supported in dataloader')
 
     def num_after_decimal(self) -> int:
-        return 4 if self.get_family() is DataSetFamily.lrgb else 2
+        return 4
+        # return 4 if self.get_family() is DataSetFamily.lrgb else 2
 
     def env_activation_type(self) -> ActivationType:
         if self.get_family() in [DataSetFamily.heterophilic, DataSetFamily.lrgb]:

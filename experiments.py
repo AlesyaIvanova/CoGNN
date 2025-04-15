@@ -40,6 +40,7 @@ class Experiment(object):
             dataset.data.y = dataset.data.y.to(dtype=torch.float)
 
         folds = self.dataset.get_folds(fold=self.fold)
+        folds = [0]
 
         # locally used parameters
         out_dim = self.metric_type.get_out_dim(dataset=dataset)

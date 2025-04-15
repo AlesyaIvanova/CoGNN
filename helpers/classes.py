@@ -136,7 +136,10 @@ class ActionNetArgs(NamedTuple):
     gin_mlp_func: Callable
     
     def load_net(self) -> ModuleList:
-        net = self.model_type.get_component_list(in_dim=self.env_dim, hidden_dim=self.hidden_dim, out_dim=2,
+        # net = self.model_type.get_component_list(in_dim=self.env_dim, hidden_dim=self.hidden_dim, out_dim=2,
+        #                                          num_layers=self.num_layers, bias=True, edges_required=False,
+        #                                          gin_mlp_func=self.gin_mlp_func)
+        net = self.model_type.get_component_list(in_dim=self.env_dim, hidden_dim=self.hidden_dim, out_dim=4,
                                                  num_layers=self.num_layers, bias=True, edges_required=False,
                                                  gin_mlp_func=self.gin_mlp_func)
         return ModuleList(net)
